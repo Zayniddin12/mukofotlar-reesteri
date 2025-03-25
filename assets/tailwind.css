@@ -1,0 +1,150 @@
+@import "/assets/fonts/Noto_Sans/stylesheet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    background: #F3F3F3;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: "Noto Sans", sans-serif;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-y-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+}
+
+.absolute-y-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.absolute-x-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.shimmer {
+    background-color: #f6f7f8;
+    background-image: linear-gradient(
+            to right,
+            #f6f7f8 0%,
+            #edeef1 20%,
+            #f6f7f8 40%,
+            #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: ease;
+}
+
+@keyframes placeholderShimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+
+    .transition-300 {
+        @apply transition-all duration-300;
+    }
+
+    .transition-200 {
+        @apply transition-all duration-200;
+    }
+
+    .absolute-x {
+        @apply absolute !-translate-x-1/2 !left-1/2;
+    }
+
+    .absolute-y {
+        @apply absolute !-translate-y-1/2 !top-1/2;
+    }
+
+    .absolute-center {
+        @apply absolute-x absolute-y;
+    }
+
+    .flex-y-center {
+        @apply flex items-center;
+    }
+
+    .flex-x-center {
+        @apply flex justify-center;
+    }
+
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .flex-center-between {
+        @apply flex justify-between items-center;
+    }
+
+    .flex-between {
+        @apply flex justify-between;
+    }
+
+    .move-enter-active,
+    .move-leave-active {
+        transition: all 0.2s ease;
+    }
+
+    .move-enter-from,
+    .move-leave-to {
+        opacity: 0;
+        transform-origin: bottom;
+        transform: translateY(20px);
+    }
+
+    .fade-enter-active {
+        animation: fade 0.3s ease-in-out;
+    }
+
+    .fade-leave-active {
+        animation: fade 0.3s ease-in-out reverse;
+    }
+
+    .fade-fast-enter-active {
+        animation: fade 0.1s ease-in-out;
+    }
+
+    .fade-fast-leave-active {
+        animation: fade 0.1s ease-in-out reverse;
+    }
+
